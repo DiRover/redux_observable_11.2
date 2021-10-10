@@ -13,6 +13,7 @@ const initialState = {
 };
 
 export default function skillsReducer(state = initialState, action) {
+  //console.log(state)
   switch (action.type) {
     case SEARCH_SKILLS_REQUEST:
       return {
@@ -37,10 +38,7 @@ export default function skillsReducer(state = initialState, action) {
       };
     case CHANGE_SEARCH_FIELD:
       const {search} = action.payload;
-      return {
-        ...state,
-        search
-      };
+      return !search ? {...state, items: [], search} : {...state, search};// чистим стейт, если ни чего не введено
     default:
       return state;
   }

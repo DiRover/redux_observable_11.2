@@ -14,7 +14,6 @@ export const searchSkillsRequest = search => {
 };
 
 export const searchSkillsFailure = error => {
-  console.log(error)
   return {
     type: SEARCH_SKILLS_FAILURE,
     payload: {error},
@@ -22,7 +21,6 @@ export const searchSkillsFailure = error => {
 };
 
 export const searchSkillsSuccess = items => {
-  console.log(items)
   return {
     type: SEARCH_SKILLS_SUCCESS,
     payload: {items},

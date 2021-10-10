@@ -20,8 +20,6 @@ const store = createStore(reducer, composeEnhancers(
   applyMiddleware(epicMiddleware)
 ));
 
-console.log( store)
-
 epicMiddleware.run(epic);
 
 export default store;
