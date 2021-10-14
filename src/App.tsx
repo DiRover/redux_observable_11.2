@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import Skills from './components/Skills';
+import List from './components/List';
 
 function App() {
     return (
-        <Skills />
+        <React.Fragment>
+            <List />
+        </React.Fragment>
     );
 }
 

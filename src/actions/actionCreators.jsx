@@ -1,33 +1,23 @@
 import {
-  CHANGE_SEARCH_FIELD,
-  SEARCH_SKILLS_REQUEST,
-  SEARCH_SKILLS_FAILURE,
-  SEARCH_SKILLS_SUCCESS,
+  LOAD_SERVICES_LIST,
+  LOAD_SUCCESS,
 } from './actionTypes';
 
+export const loadServicesList = () => {
+  console.log(`${process.env.REACT_APP_SEARCH_URL}/services`);
 
-export const searchSkillsRequest = search => {
   return {
-    type: SEARCH_SKILLS_REQUEST,
-    payload: {search},
+    type: LOAD_SERVICES_LIST,
   }
-};
+}
 
-export const searchSkillsFailure = error => {
+export const loadSuccess = (respons) => {
+  console.log('list');
+  console.log(respons);
+  console.log('list');
+  const list = respons.json();
   return {
-    type: SEARCH_SKILLS_FAILURE,
-    payload: {error},
+    type: LOAD_SUCCESS,
+    payload: {list}
   }
-};
-
-export const searchSkillsSuccess = items => {
-  return {
-    type: SEARCH_SKILLS_SUCCESS,
-    payload: {items},
-  }
-};
-
-export const changeSearchField = search => ({
-  type: CHANGE_SEARCH_FIELD,
-  payload: {search},
-});
+}
