@@ -4,8 +4,6 @@ import {
 } from './actionTypes';
 
 export const loadServicesList = () => {
-  console.log(`${process.env.REACT_APP_SEARCH_URL}/services`);
-
   return {
     type: LOAD_SERVICES_LIST,
   }

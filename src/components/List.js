@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, Fragment} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {loadServicesList} from '../actions/actionCreators';
 
@@ -10,7 +10,16 @@ function List() {
     useEffect(() => {
         dispatch(loadServicesList());
     }, [])
-    return (null)
+    return (
+        <Fragment>
+            {loading && <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+</div>}
+        </Fragment>
+        
+    )
 };
 
 export default List;
