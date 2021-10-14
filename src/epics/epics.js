@@ -7,9 +7,8 @@ import { of } from 'rxjs';
 
 export const listEpic = action$ => action$.pipe(
     ofType(LOAD_SERVICES_LIST),
-    switchMap(() => {
-        ajax.getJSON(`http://localhost:7070/api/search/services`)}),
-    map(map(respons =>{ 
-        loadSuccess(respons)}))
- 
+    tap(o => console.log(o)),
+    switchMap(o => ajax.getJSON(`${process.env.REACT_APP_SEARCH_URL}/services`).pipe(
+        map(respons => loadSuccess(respons)),
+    )),
 );

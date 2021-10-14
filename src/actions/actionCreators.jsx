@@ -12,10 +12,10 @@ export const loadServicesList = () => {
 }
 
 export const loadSuccess = (respons) => {
-  console.log('list');
-  console.log(respons);
-  console.log('list');
-  const list = respons.json();
+  // console.log('list');
+  // console.log(respons);
+  // console.log('list');
+  const list = respons;
   return {
     type: LOAD_SUCCESS,
     payload: {list}
