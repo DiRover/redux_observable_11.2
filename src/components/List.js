@@ -1,24 +1,28 @@
-import {useState, useEffect, Fragment} from 'react';
+import { useState, useEffect, Fragment, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {loadServicesList} from '../actions/actionCreators';
+import Provider from '../context/Provider';
+import { loadServicesList } from '../actions/actionCreators';
+import {Link} from 'react-router-dom';
+import Context from '../context/Context';
 
 
 function List() {
     const { list, loading } = useSelector(state => state.list);
-    console.log(list);
+    const { getDescription } = useContext(Context);
+    // console.log(list);
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadServicesList());
-    }, [])
+
     return (
         <Fragment>
-            {loading && <div class="d-flex justify-content-center">
-            <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-</div>}
+            <div className="list-group">
+            {list.map((item) => {
+                return <Link to={`/list/${item.id}`} key={item.id} onClick={() => getDescription(item.id)}   className="list-group-item list-group-item-action list-group-item-info">{item.name}</Link>
+            })}
+            </div>
+            <Link to='/test'>FDFD</Link>
+            
         </Fragment>
-        
+
     )
 };
 

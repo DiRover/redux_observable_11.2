@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
-import List from './components/List';
+import UnionComponent from './components/UnionComponent';
+import Provider from './context/Provider';
+
 
 function App() {
     return (
         <React.Fragment>
-            <List />
+            <Provider>
+                <UnionComponent />
+            </Provider>
         </React.Fragment>
     );
 }
