@@ -1,8 +1,8 @@
-import { idText } from 'typescript';
 import {
   LOAD_SERVICES_LIST,
   LOAD_SUCCESS,
   LOAD_DESCRIPTION,
+  LOAD_DESCRIPTION_SUCCESS,
 } from './actionTypes';
 
 export const loadServicesList = () => {
@@ -15,21 +15,21 @@ export const loadSuccess = (respons) => {
   const list = respons;
   return {
     type: LOAD_SUCCESS,
-    payload: {list}
+    payload: { list }
   }
 }
 
 export const loadDescription = (id) => {
   return {
     type: LOAD_DESCRIPTION,
-    payload: {id}
+    payload: { id }
   }
 }
 
 export const loadDescriptionSuccess = (respons) => {
   console.log(respons);
   return {
-    type: LOAD_DESCRIPTION,
+    type: LOAD_DESCRIPTION_SUCCESS,
     payload: respons
   }
 }

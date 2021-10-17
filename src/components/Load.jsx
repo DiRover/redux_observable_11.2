@@ -2,8 +2,10 @@ import { Fragment, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
+
 function Load(){
-    const { loading } = useSelector(state => state.list);
+    const { loading } = useSelector(state => state);
+    
     //console.log(loading)
     return (
         <Fragment>

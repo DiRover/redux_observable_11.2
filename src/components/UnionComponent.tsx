@@ -1,20 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useState, useEffect, Fragment } from 'react';
 import { loadServicesList } from '../actions/actionCreators';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Load from "./Load";
 import List from "./List";
 import Description from "./Description";
 import Test from "./Test";
 //объединенный компонент с роутами
 function UnionComponent(): JSX.Element {
-    const { list, loading } = useSelector(state => state.list);
-    //console.log(list);
     const dispatch = useDispatch();
-    useEffect(() => {
-        //console.log('dispatch');
-        dispatch(loadServicesList());
-    }, [])
+    dispatch(loadServicesList());// обошёлся без useEffect
 
     return (
         <Router>
