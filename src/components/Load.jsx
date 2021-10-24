@@ -1,12 +1,11 @@
-import { Fragment, useContext } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { Fragment } from 'react';
+import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 
 function Load(){
     const { loading } = useSelector(state => state);
     
-    //console.log(loading)
     return (
         <Fragment>
             {loading && <div className="d-flex justify-content-center">

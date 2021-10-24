@@ -1,17 +1,19 @@
 import Context from "./Context";
-import {loadDescription} from "../actions/actionCreators";
-import { useSelector, useDispatch } from 'react-redux';
+import {loadDescription, loadServicesList} from "../actions/actionCreators";
+import { useDispatch } from 'react-redux';
 
 export default function Provider(prop) {
     const dispatch = useDispatch();
     const getDescription = (id) => {
-        console.log('provider')
-        console.log(id)
-        console.log('provider')
         dispatch(loadDescription(id));
     }
+
+    const getList = () => {
+        dispatch(loadServicesList());
+    }
+
     return(
-        <Context.Provider value={{getDescription}}>
+        <Context.Provider value={{getDescription, getList}}>
             {prop.children}
         </Context.Provider>
     )

@@ -3,6 +3,9 @@ import {
   LOAD_SUCCESS,
   LOAD_DESCRIPTION,
   LOAD_DESCRIPTION_SUCCESS,
+  LOAD_FAIL,
+  LOAD_DESCRIPTION_FAIL,
+  CANCEL,
 } from './actionTypes';
 
 export const loadServicesList = () => {
@@ -15,7 +18,14 @@ export const loadSuccess = (respons) => {
   const list = respons;
   return {
     type: LOAD_SUCCESS,
-    payload: { list }
+    payload: { list },
+    loading: false,
+  }
+}
+
+export const loadFail = () => {
+  return {
+    type: LOAD_FAIL,
   }
 }
 
@@ -27,9 +37,20 @@ export const loadDescription = (id) => {
 }
 
 export const loadDescriptionSuccess = (respons) => {
-  console.log(respons);
   return {
     type: LOAD_DESCRIPTION_SUCCESS,
-    payload: respons
+    payload: { respons }
+  }
+}
+
+export const loadDescriptionFail = () => {
+  return {
+    type: LOAD_DESCRIPTION_FAIL,
+  }
+}
+
+export const cancel = () => {
+  return {
+    type: CANCEL,
   }
 }

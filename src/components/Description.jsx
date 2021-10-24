@@ -1,12 +1,35 @@
 import { Fragment } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+import Spinner from '../components/Spinner';
+import Modal from './Modal';
+
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 50%;
+margin: 30vh auto;
+`;
 
 export default function Description() {
-    console.log('description');
+    const { description, title, loading, error } = useSelector(state => state.list);
+
+    const data = "description";
     return (
         <Fragment>
-            <p class="text-xl-start">Start aligned text on viewports sized XL (extra-large) or wider.</p>
-            <Link to='/'><button type="button" class="btn btn-info btn-lg">Home</button></Link>
+            <Container>
+                {loading && <Spinner />}
+                {error && <Modal prop={data}/>}
+                {(!loading && !error) && <Fragment>
+                    <h1>{title}</h1>
+                    <p className="fw-bolder">{description}</p>
+                    <div style={{"margin": "40px 0 0 0"}}>
+                    <Link to='/'><button type="button" className="btn btn-info btn-lg">Home</button></Link>
+                </div>
+                </Fragment>}
+            </Container>
         </Fragment>
     )
 }

@@ -1,5 +1,4 @@
 import { createStore, combineReducers, applyMiddleware, compose, } from 'redux';
-import thunk from 'redux-thunk';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import showListReducer from '../reducers/showListReducer';
 import { listEpic, descriptionEpic} from '../epics/epics';
