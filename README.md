@@ -1,5 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/8ful6ynxp7im0os5?svg=true)](https://ci.appveyor.com/project/DiRover/redux-observable-11-2)
-[GH-PAGE](https://http-herocu-pictures.herokuapp.com/)
+
+[See here GH-PAGE](https://http-herocu-pictures.herokuapp.com/)
 
 
 
