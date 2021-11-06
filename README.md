@@ -22,3 +22,6 @@
 
 Готовый бэкенд расположен в каталоге `backend`.
 
+Server API 
+https://unionserver.herokuapp.com/api/search/services
+https://unionserver.herokuapp.com/api/search/services/id
