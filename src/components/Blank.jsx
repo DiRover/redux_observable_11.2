@@ -10,7 +10,7 @@ width: 50%;
 margin: 30vh auto;
 `;
 
-
+//бланковая страница, если кто-то выбрал отмену, а не дальнейшую загрузку
 export default function Blank() {
     return (
         <Container>

@@ -7,14 +7,14 @@ import {
   LOAD_DESCRIPTION_FAIL,
   CANCEL,
 } from './actionTypes';
-
-export const loadServicesList = () => {
+//создание экшенов
+export const loadServicesList = () => {//начальная загрузка списка
   return {
     type: LOAD_SERVICES_LIST,
   }
 }
 
-export const loadSuccess = (respons) => {
+export const loadSuccess = (respons) => {//удачная начальная загрузка списка
   const list = respons;
   return {
     type: LOAD_SUCCESS,
@@ -23,33 +23,33 @@ export const loadSuccess = (respons) => {
   }
 }
 
-export const loadFail = () => {
+export const loadFail = () => {//неудачная загрузка списка
   return {
     type: LOAD_FAIL,
   }
 }
 
-export const loadDescription = (id) => {
+export const loadDescription = (id) => {//загрузка описания
   return {
     type: LOAD_DESCRIPTION,
     payload: { id }
   }
 }
 
-export const loadDescriptionSuccess = (respons) => {
+export const loadDescriptionSuccess = (respons) => {//удачная загрузка описания
   return {
     type: LOAD_DESCRIPTION_SUCCESS,
     payload: { respons }
   }
 }
 
-export const loadDescriptionFail = () => {
+export const loadDescriptionFail = () => {//неудачная загрузка описания
   return {
     type: LOAD_DESCRIPTION_FAIL,
   }
 }
 
-export const cancel = () => {
+export const cancel = () => {//просто отмена (когда появляется модалка с вопросом новой загрузки)
   return {
     type: CANCEL,
   }

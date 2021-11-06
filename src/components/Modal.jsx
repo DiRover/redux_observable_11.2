@@ -7,15 +7,16 @@ import { cancel } from '../actions/actionCreators';
 
 import Context from '../context/Context';
 
+//модальное окно
 export default function Modal(prop) {
     const {data} = prop;
     const { getDescription, getList } = useContext(Context);
     const { currentId } = useSelector(state => state.list);
     const dispatch = useDispatch();
 
-    const load = data === 'list' ? false : true;
+    const load = data === 'list' ? false : true;//для определения того, что нужно загрузить список или описание
 
-const cancelHandler = () => {
+const cancelHandler = () => {//обработка отмены повторной загрузки чего либо
      dispatch(cancel());
 }
 return (

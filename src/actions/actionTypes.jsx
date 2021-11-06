@@ -1,3 +1,4 @@
+//типы экшенов
 export const LOAD_SERVICES_LIST = 'LOAD_SERVICES_LIST';
 export const LOAD_SUCCESS = 'LOAD_SUCCESS';
 export const LOAD_DESCRIPTION = 'LOAD_DESCRIPTION';

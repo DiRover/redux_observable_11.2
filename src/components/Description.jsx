@@ -12,11 +12,11 @@ align-items: center;
 width: 50%;
 margin: 30vh auto;
 `;
-
+//компонент отображения описания элемента списка
 export default function Description() {
     const { description, title, loading, error } = useSelector(state => state.list);
 
-    const data = "description";
+    const data = "description";//нужно для того, чтобы модалка поняла, что нужно заного загрузить именно описания элемента списка
     return (
         <Fragment>
             <Container>

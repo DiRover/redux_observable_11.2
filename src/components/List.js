@@ -15,11 +15,11 @@ width: 50%;
 margin: 30vh auto;
 `;
 
-
+//компонент отображения списка элементов
 function List() {
     const { list, loading, error } = useSelector(state => state.list);
     const { getDescription } = useContext(Context);
-    const data = "list";
+    const data = "list";// нужно для того, чтобы модалка поняла, что нужно загрузить заного именно список
 
     return (
         <Fragment>

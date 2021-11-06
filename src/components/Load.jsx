@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-
+//компонент нафиг не нужен, вначале для первой загрузки списка думал использовать, потом передумал
 function Load(){
     const { loading } = useSelector(state => state);
     

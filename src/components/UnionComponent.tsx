@@ -8,8 +8,8 @@ import {useEffect} from 'react';
 //объединенный компонент с роутами
 function UnionComponent(): JSX.Element {
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadServicesList());
+    useEffect(() => {//не помню почему юзэффект, но точно нужен, т.к. без него тоже пытался
+        dispatch(loadServicesList());//сразу загружаем список в самый первый раз
     }, [dispatch])
     
 

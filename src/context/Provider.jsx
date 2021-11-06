@@ -4,11 +4,11 @@ import { useDispatch } from 'react-redux';
 
 export default function Provider(prop) {
     const dispatch = useDispatch();
-    const getDescription = (id) => {
+    const getDescription = (id) => {//получение описания
         dispatch(loadDescription(id));
     }
 
-    const getList = () => {
+    const getList = () => {//получение списка
         dispatch(loadServicesList());
     }
 
